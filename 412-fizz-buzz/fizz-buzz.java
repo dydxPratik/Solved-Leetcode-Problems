@@ -1,13 +1,18 @@
 class Solution {
     public List<String> fizzBuzz(int n) {
         ArrayList<String> result = new ArrayList<String>();
+        int c3 = 0,  c5 = 0;
         for(int i = 1; i <= n; i++)
         {
             String res = "";
-            if(i%3 == 0) res += "Fizz";
-            if(i%5 == 0) res += "Buzz";
+            c3++;
+            c5++;
+            if(c3 == 3)
+            { res += "Fizz"; c3 = 0; }
+            if(c5 == 5) 
+            { res += "Buzz"; c5 = 0; }
 
-            if(res.length() == 0) result.add(String.valueOf(i));
+            if(res == "") result.add(String.valueOf(i));
             else result.add(res);
         }
 
